@@ -53,6 +53,8 @@ const HookForm = (props) => {
           <label>Confirm Password: </label>  
           <input type="password" value={ confirmPassword } onChange={ (e) => setConfirmPassword(e.target.value) } />
 
+          <input type="submit"/>
+
         </form>
 
         <p>Your Form Data</p>
