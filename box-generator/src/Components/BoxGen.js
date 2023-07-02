@@ -5,6 +5,8 @@ const BoxGen = (props) => {
 
     const [ color, setColor ] = useState("");
 
+    const [ dimension, setDimension ] = useState(100);
+
     const [ boxColors, setBoxColors ] = useState([]);
 
     const pickColor = (e) => {
@@ -36,6 +38,9 @@ const BoxGen = (props) => {
             <label>Color: </label>
             <input type="text" value={ color } onChange={ handleColorChange }/>
 
+            <label>Dimension: </label>
+            <input type="number" value={ dimension } onChange={ (e) => setDimension(e.target.value) }/>
+
             <input type="submit" value="Add Color"  />
 
         </form>
@@ -43,7 +48,7 @@ const BoxGen = (props) => {
         <div className={ styles.container }>
 
         { boxColors.map( (choice, index) =>
-            <div className={ styles.div } style={{ backgroundColor: choice }} key={ index }></div>
+            <div className={ styles.div } style={{ backgroundColor: choice, width: `${dimension}px`, height: `${dimension}px` }} key={ index }></div>
         ) }  
         
         </div>
