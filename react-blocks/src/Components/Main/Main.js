@@ -5,7 +5,7 @@ const Main = (props) => {
 
     return (
 
-        <div className={ styles.div }> { props.children } </div>
+        <div className={ styles.div }> </div>
 
     );
 

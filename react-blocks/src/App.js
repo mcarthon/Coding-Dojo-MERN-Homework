@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import Header from './Components/Header/Header';
 import Navigation from './Components/Navigation/Navigation';
 import Main from './Components/Main/Main';
@@ -9,7 +9,7 @@ import Advertisement from './Components/Advertisement/Advertisement';
                 
 function App() {
   return (
-    <div className="app">
+    <div className={ styles.app }>
         <Header />
         <Navigation />
         <Main>
