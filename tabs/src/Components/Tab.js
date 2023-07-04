@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Tab.module.css'
 
 const Tab = ({items}) => {
 
@@ -22,7 +23,13 @@ const Tab = ({items}) => {
                 
                     <li key={ index }>
 
-                        <button onClick={ (e) => eventHandler(  e, index ) } > item.label </button>
+                        <button 
+                        
+                            onClick={ (e) => eventHandler(  e, index ) } 
+                            
+                            className={ `${ styles.tabPane } ${ activeIndex === index ? styles.activePane : '' }` }
+
+                            > item.label </button>
 
                     </li>    
 
