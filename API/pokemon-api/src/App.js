@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -6,43 +7,15 @@ function App() {
 
   const getPokemon = async () => {
 
-    await fetch("https://pokeapi.co/api/v2/pokemon/?limit=807")
+  const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807")
+         
+  const names = response.data.results.map(pokemon => {
 
-      .then(response => {
+    return pokemon.name;
 
-            return response.json();
-          
-        })
+  });
 
-      .then(data => {
-
-          const names = data.results.map(
-
-            pokemon => {
-
-              return pokemon.name;
-
-            }
-
-          );
-
-          return names;
-
-      })
-      
-      .then(names => {
-
-        setPokemonNames(names);
-
-        console.log(names);
-
-      })
-
-      .catch(error => {
-
-          console.log(error);
-
-      })        
+  setPokemonNames(names);
 
   }
 
