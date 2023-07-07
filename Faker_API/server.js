@@ -14,7 +14,7 @@ const createProduct = () => {
 };
     
 const newFakeProduct = createProduct();
-console.log(newFakeProduct);
+// console.log(newFakeProduct);
 /*
  * The output of the above console log will look like this
  * {
@@ -71,7 +71,7 @@ app.get("/api/users/new", ( request, response ) => {
 
     console.log(request.body);
 
-    response.json( { status: "OK" } );
+    response.json( request.body );
 
 });
 
@@ -81,7 +81,7 @@ app.get("/api/companies/new", ( request, response ) => {
 
     console.log(request.body);
 
-    response.json( { status: "OK" } );
+    response.json( request.body );
 
 });
 
@@ -93,7 +93,7 @@ app.get("/api/user/company", ( request, response ) => {
 
     console.log(request.body);
 
-    response.json( { status: "OK" } );
+    response.json( request.body );
 
 });
 
