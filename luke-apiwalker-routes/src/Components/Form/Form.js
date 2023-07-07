@@ -7,8 +7,6 @@ const Form = () => {
   
     const context = useContext(WrapperContext);
 
-    console.log(context);
-
     const navigate = useNavigate();
 
     const searchAPI = async (e) => {
