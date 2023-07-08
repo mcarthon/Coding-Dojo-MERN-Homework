@@ -1,0 +1,1042 @@
+PowerShell 7.3.5
+PS C:\Users\Mark\Desktop\Coding Dojo\MERN> mongosh "mongodb+srv://cluster0.mhzuldc.mongodb.net/" --apiVersion 1 --username mcarthon
+Enter password: ********
+Current Mongosh Log ID: 64a8c65190beefed527629d7
+Connecting to:          mongodb+srv://<credentials>@cluster0.mhzuldc.mongodb.net/?appName=mongosh+1.10.1
+Using MongoDB:          6.0.6 (API Version 1)
+Using Mongosh:          1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-ij6ssc-shard-0 [primary] test> db
+test
+Atlas atlas-ij6ssc-shard-0 [primary] test> show dbs
+admin  376.00 KiB
+local    7.58 GiB
+Atlas atlas-ij6ssc-shard-0 [primary] test> use admin
+switched to db admin
+Atlas atlas-ij6ssc-shard-0 [primary] admin> db
+admin
+Atlas atlas-ij6ssc-shard-0 [primary] admin> show collections
+
+Atlas atlas-ij6ssc-shard-0 [primary] admin> use test
+switched to db test
+Atlas atlas-ij6ssc-shard-0 [primary] test> show collections
+
+Atlas atlas-ij6ssc-shard-0 [primary] test> use admin
+switched to db admin
+Atlas atlas-ij6ssc-shard-0 [primary] admin> clear
+ReferenceError: clear is not defined
+Atlas atlas-ij6ssc-shard-0 [primary] admin> use test
+switched to db test
+Atlas atlas-ij6ssc-shard-0 [primary] test> createCollection(testers)
+ReferenceError: createCollection is not defined
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.createCollection(testers)
+ReferenceError: testers is not defined
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.createCollection("testers")
+{ ok: 1 }
+Atlas atlas-ij6ssc-shard-0 [primary] test> show collections
+testers
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.insertOne({name: "Brendan"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8c6f990beefed527629d8")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.find()
+[ { _id: ObjectId("64a8c6f990beefed527629d8"), name: 'Brendan' } ]
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.findOne({_id: ObjectId("64a8c6f990beefed527629d8")})
+{ _id: ObjectId("64a8c6f990beefed527629d8"), name: 'Brendan' }
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.find({_id: ObjectId("64a8c6f990beefed527629d8")})
+[ { _id: ObjectId("64a8c6f990beefed527629d8"), name: 'Brendan' } ]
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.update({_id: ObjectId("64a8c6f990beefed527629d8")}, {$set: {location: "narnia"}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.find({_id: ObjectId("64a8c6f990beefed527629d8")})
+[
+  {
+    _id: ObjectId("64a8c6f990beefed527629d8"),
+    name: 'Brendan',
+    location: 'narnia'
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.insertOne({name: "Toyota", location: "Big Momma's House"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8c8fa90beefed527629d9")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.find()
+[
+  {
+    _id: ObjectId("64a8c6f990beefed527629d8"),
+    name: 'Brendan',
+    location: 'narnia'
+  },
+  {
+    _id: ObjectId("64a8c8fa90beefed527629d9"),
+    name: 'Toyota',
+    location: "Big Momma's House"
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.findOneAndDelete({_id: ObjectId("64a8c6f990beefed527629d8")})
+{
+  _id: ObjectId("64a8c6f990beefed527629d8"),
+  name: 'Brendan',
+  location: 'narnia'
+}
+Atlas atlas-ij6ssc-shard-0 [primary] test> db.testers.find()
+[
+  {
+    _id: ObjectId("64a8c8fa90beefed527629d9"),
+    name: 'Toyota',
+    location: "Big Momma's House"
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test>
+
+Atlas atlas-ij6ssc-shard-0 [primary] test> use my_first_db
+switched to db my_first_db
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> show dbs
+test    72.00 KiB
+admin  376.00 KiB
+local    7.58 GiB
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.createCollection("students")
+{ ok: 1 }
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> show collections
+students
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.insertOne({name: "Charlie Hopper", home_state: "Wyoming", lucky_number: 23, birthday:{month: 2, day: 6, year: 1949}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8cea490beefed527629da")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.insertOne({name: "Esmeralda Journey", home_state: "Utah", lucky_number: 42, birthday:{month: 6, day: 5, year: 1931}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8cee090beefed527629db")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.insertOne({name: "Corey Prager", home_state: "Mississippi", lucky_number: 9, birthday:{month: 9, day: 9, year: 1899}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8cf1b90beefed527629dc")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.insertOne({name: "Sergio Ramos", home_state: "Madrid", lucky_number: 18, birthday:{month: 12, day: 31, year: 1985}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8cf7a90beefed527629dd")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 }
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.insertOne({name: "Chao Ling", home_state: "Bossanova", lucky_number: 88, birthday:{month: 10, day: 15, year: 1467}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64a8cfb590beefed527629de")
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 }
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 }
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 }
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 }
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find({$or: [ { home_state: "California" }, { home_state:"" } ]})
+
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find({$or: [ { home_state: "California" }, { home_state:"Washington" } ]})
+
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find({$or: [ { lucky_number: { $gt: 20 } })
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:54)
+
+> 1 | db.students.find({$or: [ { lucky_number: { $gt: 20 } })
+    |                                                       ^
+  2 |
+
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find({ lucky_number: { $gt: 20 } )
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:45)
+
+> 1 | db.students.find({ lucky_number: { $gt: 20 } )
+    |                                              ^
+  2 |
+
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find({ lucky_number: { $gt: 20 } })
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 }
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 }
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 }
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateMany( {}, { $set: {interests: [ "coding", "brunch", "MongoDB" ]} } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Wyoming" }, { $addToSet: { interests: "fishing" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Utah" }, { $addToSet: { interests: "sewing" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Mississippi" }, { $addToSet: { interests: "fixing cars" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Madrid" }, { $addToSet: { interests: "football" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'football' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Bossanova" }, { $addToSet: { interests: "kung fu" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'football' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Madrid" }, { $addToSet: { interests: "taxes" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'football', 'taxes' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateOne( { home_state: "Madrid" }, { $pull: { interests: "taxes" } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'football' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.deleteMany( { home_state: "California" } )
+{ acknowledged: true, deletedCount: 0 }
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cf7a90beefed527629dd"),
+    name: 'Sergio Ramos',
+    home_state: 'Madrid',
+    lucky_number: 18,
+    birthday: { month: 12, day: 31, year: 1985 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'football' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.deleteOne( { name: "Sergio Ramos" } )
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cea490beefed527629da"),
+    name: 'Charlie Hopper',
+    home_state: 'Wyoming',
+    lucky_number: 23,
+    birthday: { month: 2, day: 6, year: 1949 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fishing' ]
+  },
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.deleteOne( { lucky_number: { $gt: 5 } } )
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ]
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ]
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ]
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateMany( {}, { $set: { number_of_belts: 0 } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ],
+    number_of_belts: 0
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateMany( { home_state: "Washington" }, { $inc: { number_of_belts: 1 } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ],
+    number_of_belts: 0
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateMany( {}, { $set: { $currentDate: { updated_on: true } } } )
+MongoServerError: The dollar ($) prefixed field '$currentDate' in '$currentDate' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ],
+    number_of_belts: 0
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.updateMany( {}, { $currentDate: { updated_on: true } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("64a8cee090beefed527629db"),
+    name: 'Esmeralda Journey',
+    home_state: 'Utah',
+    lucky_number: 42,
+    birthday: { month: 6, day: 5, year: 1931 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'sewing' ],
+    number_of_belts: 0,
+    updated_on: ISODate("2023-07-08T03:34:27.947Z")
+  },
+  {
+    _id: ObjectId("64a8cf1b90beefed527629dc"),
+    name: 'Corey Prager',
+    home_state: 'Mississippi',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1899 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'fixing cars' ],
+    number_of_belts: 0,
+    updated_on: ISODate("2023-07-08T03:34:27.947Z")
+  },
+  {
+    _id: ObjectId("64a8cfb590beefed527629de"),
+    name: 'Chao Ling',
+    home_state: 'Bossanova',
+    lucky_number: 88,
+    birthday: { month: 10, day: 15, year: 1467 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'kung fu' ],
+    number_of_belts: 0,
+    updated_on: ISODate("2023-07-08T03:34:27.947Z")
+  }
+]
+Atlas atlas-ij6ssc-shard-0 [primary] my_first_db>
+
+
+
