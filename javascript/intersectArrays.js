@@ -1,3 +1,5 @@
+const insertionSort = require("./insertionSort");
+
 function intersectArrays(array1, array2) {
 
     commonValues = [];
@@ -22,7 +24,9 @@ function intersectArrays(array1, array2) {
 
     }
 
-    return commonValues.sort((a, b) => a - b);
+    // return commonValues.sort((a, b) => a - b);
+
+    return insertionSort(commonValues);
 
 }
 

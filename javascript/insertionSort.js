@@ -29,3 +29,5 @@ function insertionSort(array) {
 }
 
 console.log(insertionSort([6,1,9,34,25,6,0,12, -5, -34]));
+
+module.exports = insertionSort;
