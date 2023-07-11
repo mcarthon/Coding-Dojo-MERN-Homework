@@ -1,10 +1,20 @@
 import Form from "./Components/Form/Form";
 
+import Product from "./Components/Product/Product";
+
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
 
   return (
 
-    <Form/>
+      <Routes>            
+        
+        <Route exact path="/" element={ <Form/> } />
+
+        <Route path="/product/:id" element={ <Product/> } />
+
+      </Routes>
 
   );
 
