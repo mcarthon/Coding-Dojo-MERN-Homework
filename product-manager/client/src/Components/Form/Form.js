@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
+import { WrapperContext } from '../Wrapper/Wrapper';
 
 const Form = () => {
 
@@ -10,27 +10,9 @@ const Form = () => {
 
     const [ price, setPrice ] = useState(0);
 
-    const [ description, setDescription ] = useState("");
-
-    const [ allProducts, setAllProducts ] = useState([]);
-
-
-    useEffect( () => {
-
-        axios.get( "http://localhost:8000/api/all-products" )
-
-            .then( response => {
-                
-                setAllProducts( response.data.products );
-            
-                console.log(`Form Component API Call: ${(JSON.stringify(response.data.products))}`);
-            
-            } )
-
-            .catch ( error => console.log( error ) );
-
-        }, [setAllProducts] );
-
+    const [ description, setDescription ] = useState("");      
+    
+    const context = useContext(WrapperContext);
 
     const submitForm = async (e) => {
 
@@ -46,16 +28,16 @@ const Form = () => {
         
         )
 
-        .then( response => console.log(response) )
+        .then( response => console.log(response) );
 
-        .catch( error => console.log( error ) );
+        return axios.get( "http://localhost:8000/api/all-products" )
 
-        await axios.get( "http://localhost:8000/api/all-products" )
+                .then( response => context.setAllProducts( response.data.products ) )
 
-            .then( response => setAllProducts(response.data.products) )
+                .catch( error => console.log( error ) );
 
-    }
-
+    }      
+        
     return (
 
         <div>
@@ -77,23 +59,7 @@ const Form = () => {
 
                 </form>
 
-            </div>
-
-            <div>
-
-                <h1> All Products </h1>
-
-                { allProducts.map( (product, index) => 
-
-                <div key={ index }>
-                    
-                    <Link to={ `/product/${product._id}` } > { product.title } </Link>
-                    
-                </div>                                                                
-
-             ) }
-
-            </div>
+            </div>       
 
         </div>
 

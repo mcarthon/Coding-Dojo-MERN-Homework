@@ -1,6 +1,8 @@
 import axios from "axios";
+
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+
+import { useParams, Link } from "react-router-dom"
 
 const Product = () => {
 
@@ -26,6 +28,8 @@ const Product = () => {
 
     return (
 
+        <>
+
         <div>
 
             <h1> { product.title } </h1>
@@ -34,9 +38,15 @@ const Product = () => {
 
             <h3> { product.description } </h3>
 
+        </div>
 
+        <div>
+
+        <Link to={ `/edit/${id}` } >Edit Product</Link>
 
         </div>
+
+        </>
 
     );
 
