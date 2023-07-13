@@ -7,7 +7,9 @@ function App() {
 
   const getPokemon = async () => {
 
-  const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807")
+  const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807");
+
+  console.log(response);
          
   const names = response.data.results.map(pokemon => {
 
