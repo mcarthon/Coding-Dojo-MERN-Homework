@@ -6,6 +6,7 @@ import Edit from './Components/Edit/Edit';
 
 import NewPlayer from './Components/NewPlayer/NewPlayer';
 
+import PlayerStatus from './Components/PlayersStatus/PlayersStatus';
 
 function App() {  
   
@@ -21,7 +22,7 @@ function App() {
 
         <Route path="/players/new" Component={ NewPlayer } />
 
-        <Route path="/players/:gameNumber" Component={ PlayersStatus } />
+        <Route path="/players/status/:gameNumber" Component={ PlayerStatus } />
 
       </Routes>
 

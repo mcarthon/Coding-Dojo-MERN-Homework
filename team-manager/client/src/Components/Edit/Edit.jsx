@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import Form from '../Form/Form';
 
@@ -31,7 +31,11 @@ const Edit = () => {
     return(
 
         <>
+
         <Form initialName={player.name} initialPosition={player.position} method={"patch"} action={`${player._id}`} ></Form>
+
+        <Link to={"/"} > Home </Link>
+
         </>
 
     )

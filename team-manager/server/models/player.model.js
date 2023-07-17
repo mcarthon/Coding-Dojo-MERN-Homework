@@ -22,27 +22,11 @@ const PlayerSchema = new mongoose.Schema({
 
     },
 
-    gameOneStatus: {
+    gameStatus: {
 
         type: Object,
 
-        default: "Unavailable"
-
-    },
-
-    gameTwoStatus: {
-
-        type: Object,
-
-        default: "Unavailable"
-
-    },
-
-    gameThreeStatus: {
-
-        type: Object,
-
-        default: "Unavailable"
+        default: ["Unavailable", "Unavailable", "Unavailable"]
 
     }
 

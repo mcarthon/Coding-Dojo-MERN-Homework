@@ -1,5 +1,7 @@
 import Form from "../Form/Form";
 
+import { Link } from 'react-router-dom';
+
 const NewPlayer = () => {
 
     return (
@@ -7,6 +9,8 @@ const NewPlayer = () => {
         <>
 
         <Form method={"post"} action={""} />
+
+        <Link to={ "/" } > Home </Link>
 
         </>
 

@@ -34,6 +34,8 @@ const AllPlayers = () => {
 
                 <Link to={"/players/new"}><button>Add Player</button></Link>
 
+                <Link to={"/players/status/0"} > Manage Player Status </Link>
+
             </div>
 
         <table>
