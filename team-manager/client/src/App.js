@@ -6,6 +6,7 @@ import Edit from './Components/Edit/Edit';
 
 import NewPlayer from './Components/NewPlayer/NewPlayer';
 
+
 function App() {  
   
   return(
@@ -19,6 +20,8 @@ function App() {
         <Route path="/players/:id" Component={ Edit } />
 
         <Route path="/players/new" Component={ NewPlayer } />
+
+        <Route path="/players/:gameNumber" Component={ PlayersStatus } />
 
       </Routes>
 
