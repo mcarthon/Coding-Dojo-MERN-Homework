@@ -26,8 +26,6 @@ const PlayerStatus = () => {
 
         const response = await axios.get( `http://localhost:8000/api/players/${ playerId }` );
 
-        console.log( response.data.player.gameStatus );
-
         let gameStatus = response.data.player.gameStatus;
 
         gameStatus[gameNumber] = status;

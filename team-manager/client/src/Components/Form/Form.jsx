@@ -18,7 +18,7 @@ const Form = (props) => {
 
         e.preventDefault();
 
-        await axios[method]( `http://localhost:8000/api/players/${action}`,
+        await axios[method]( `http://localhost:8000/api/players${action}`,
         
             { name, position }
 
@@ -54,7 +54,14 @@ const Form = (props) => {
 
             <input type="button" value="Cancel" onClick={ cancelChanges } />
 
+            { name && name.length > 1 ?
+            
             <input type="submit" value="Submit" />
+
+            : <input type="submit" value="Submit" disabled/>
+            
+        }
+            
 
         </form>
 

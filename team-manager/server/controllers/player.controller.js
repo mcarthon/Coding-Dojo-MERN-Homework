@@ -4,7 +4,7 @@ const { response } = require( "express" );
 
 module.exports.createPlayer = ( request, response ) => {
 
-    const { name, position } = request.body;
+    const { name, position, gameStatus } = request.body;
 
     Player.create({
 
@@ -12,11 +12,7 @@ module.exports.createPlayer = ( request, response ) => {
 
         position,
 
-        gameOneStatus,
-
-        gameTwoStatus,
-
-        gameThreeStatus
+        gameStatus
 
     })
 
